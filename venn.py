@@ -79,10 +79,10 @@ def venn4(subsets,
 
     # Add exterior set labels
     set_label_positions = [
-        (0.17, 0.92,  45),  # A (top)
-        (0.73, 0.92, -45),  # B (left)
-        (0.05, 0.26, -45),  # C (right)
-        (0.85, 0.28,  50),
+        (0.22, 0.91,  45),  # A (top left)
+        (0.78, 0.91, -45),  # B (top right)
+        (0.12, 0.22, -45),  # C (bottom right)
+        (0.88, 0.22,  45),  # D (bottom left)
     ]
     for label, (x, y, rotation) in zip(set_labels, set_label_positions):
         ax.text(x, y, label, rotation=rotation,
