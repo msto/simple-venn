@@ -20,7 +20,5 @@ Example
 .. figure:: https://github.com/msto/simple-venn/blob/master/demo/demo.png
    :alt: demo
 
-   demo
-
 The code used to generate this figure can be found in the included
 `iPython notebook demo <demo/simple-venn-demo.ipynb>`__
