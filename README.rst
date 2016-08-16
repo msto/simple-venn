@@ -21,4 +21,4 @@ Example
    :alt: demo
 
 The code used to generate this figure can be found in the included
-`iPython notebook demo <demo/simple-venn-demo.ipynb>`__
+`iPython notebook demo <demo/simple-venn-demo.ipynb>`__.
