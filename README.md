@@ -7,9 +7,10 @@ The function calls are mostly interchangeable with those from
 and `venn3` functions lack the `normalize_to` parameter, and all functions
 return an `AxesSubplot` object instead of a `VennDiagram`.
 
-`simple-venn` makes label customization slightly easier by permitting string
-subset labels and including parameters for set and subset label font sizes.
-The default font sizes are appropriate for an 8 inch by 8 inch axes.
+`simple-venn` adds four-way Venn diagrams and makes label customization
+slightly easier by permitting string subset labels and including parameters for
+set and subset label font sizes.  The default font sizes are appropriate for an
+8 inch by 8 inch axes.
 
 ## Installation
 Available on [PyPi](https://pypi.python.org/pypi/simple-venn/0.1.0)
