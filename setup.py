@@ -7,18 +7,15 @@ from setuptools import setup, find_packages
 with open('README.rst') as f:
     readme = f.read()
 
-with open('LICENSE') as f:
-    license = f.read()
-
 setup(
     name='simple-venn',
-    version='0.1',
+    version='0.1.0',
     description='Simple venn diagrams',
     long_description=readme,
     author='Matthew Stone',
     author_email='matthew(dot)stone12(at)gmail.com',
     url='https://github.com/msto/simple-venn',
-    license=license,
+    license='MIT',
     packages=find_packages(exclude=['demo']),
     classifiers=[
         'Development Status :: 3 - Alpha',
