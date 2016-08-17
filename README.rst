@@ -14,11 +14,5 @@ string subset labels and including parameters for set and subset label
 font sizes. The default font sizes are appropriate for an 8 inch by 8
 inch axes.
 
-Example
--------
-
-.. figure:: https://github.com/msto/simple-venn/blob/master/demo/demo.png
-   :alt: demo
-
-The code used to generate this figure can be found in the included
-`iPython notebook demo <demo/simple-venn-demo.ipynb>`__.
+Example code can be found in the demo `iPython notebook
+<https://github.com/msto/simple-venn/blob/master/demo/simple-venn-demo.ipynb>`__.
