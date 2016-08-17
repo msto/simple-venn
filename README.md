@@ -11,6 +11,11 @@ return an `AxesSubplot` object instead of a `VennDiagram`.
 subset labels and including parameters for set and subset label font sizes.
 The default font sizes are appropriate for an 8 inch by 8 inch axes.
 
+## Installation
+Available on [PyPi](https://pypi.python.org/pypi/simple-venn/0.1.0)
+
+    pip install simple-venn
+
 ## Example
 ![demo](https://github.com/msto/simple-venn/blob/master/demo/demo.png)
 
