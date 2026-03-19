@@ -3,3 +3,6 @@ dist/
 .ipynb_checkpoints
 __pycache__
 *.swp
+
+build/
+.venv/
