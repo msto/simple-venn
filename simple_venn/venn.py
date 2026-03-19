@@ -66,7 +66,7 @@ def venn4(
         ((0.65, 0.40), 45),  # C (bottom right)
         ((0.35, 0.40), -45),  # D (bottom left)
     ]
-    for (coord, angle), color in zip(ellipse_coords, set_colors):
+    for (coord, angle), color in zip(ellipse_coords, set_colors, strict=True):
         e = patches.Ellipse(coord, width, height, angle, alpha=alpha, facecolor=color)
         ax.add_patch(e)
 
@@ -77,7 +77,7 @@ def venn4(
         (0.12, 0.22, -45),  # C (bottom right)
         (0.88, 0.22, 45),  # D (bottom left)
     ]
-    for label, (x, y, rotation) in zip(set_labels, set_label_positions):
+    for label, (x, y, rotation) in zip(set_labels, set_label_positions, strict=True):
         ax.text(
             x, y, label, rotation=rotation, ha="center", va="center", fontsize=set_label_fontsize
         )
@@ -101,7 +101,7 @@ def venn4(
         (0.40, 0.32, -10),  # BCD
         (0.50, 0.45, 0),  # ABCD
     ]
-    for label, (x, y, rotation) in zip(subsets, subset_positions):
+    for label, (x, y, rotation) in zip(subsets, subset_positions, strict=True):
         ax.text(
             x, y, label, rotation=rotation, ha="center", va="center", fontsize=subset_label_fontsize
         )
@@ -170,7 +170,7 @@ def venn3(
         (0.63, 0.37),  # B (bottom right)
         (0.37, 0.37),  # C (bottom left)
     ]
-    for color, coord in zip(set_colors, ellipse_coords):
+    for color, coord in zip(set_colors, ellipse_coords, strict=True):
         e = patches.Ellipse(coord, width, height, alpha=alpha, facecolor=color)
         ax.add_patch(e)
 
@@ -180,7 +180,7 @@ def venn3(
         (0.88, 0.14, 45),  # B (bottom right)
         (0.12, 0.14, -45),  # C (bottom left)
     ]
-    for label, (x, y, rotation) in zip(set_labels, set_label_positions):
+    for label, (x, y, rotation) in zip(set_labels, set_label_positions, strict=True):
         ax.text(
             x, y, label, rotation=rotation, ha="center", va="center", fontsize=set_label_fontsize
         )
@@ -196,7 +196,7 @@ def venn3(
         (0.5, 0.24),  # BC
         (0.5, 0.47),  # ABC
     ]
-    for label, (x, y) in zip(subsets, subset_positions):
+    for label, (x, y) in zip(subsets, subset_positions, strict=True):
         ax.text(x, y, label, rotation=0, ha="center", va="center", fontsize=subset_label_fontsize)
 
     # Remove borders
@@ -262,7 +262,7 @@ def venn2(
         (0.37, 0.5),  # A (left)
         (0.63, 0.5),  # B (right)
     ]
-    for color, coord in zip(set_colors, ellipse_coords):
+    for color, coord in zip(set_colors, ellipse_coords, strict=True):
         e = patches.Ellipse(coord, width, height, alpha=alpha, facecolor=color)
         ax.add_patch(e)
 
@@ -271,7 +271,7 @@ def venn2(
         (0.18, 0.82, 30),  # A (left)
         (0.82, 0.82, -30),  # B (right)
     ]
-    for label, (x, y, rotation) in zip(set_labels, set_label_positions):
+    for label, (x, y, rotation) in zip(set_labels, set_label_positions, strict=True):
         ax.text(
             x, y, label, rotation=rotation, ha="center", va="center", fontsize=set_label_fontsize
         )
@@ -283,7 +283,7 @@ def venn2(
         (0.8, 0.5),  # B
         (0.5, 0.5),  # AB
     ]
-    for label, (x, y) in zip(subsets, subset_positions):
+    for label, (x, y) in zip(subsets, subset_positions, strict=True):
         ax.text(x, y, label, rotation=0, ha="center", va="center", fontsize=subset_label_fontsize)
 
     # Remove borders
