@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 
 SubsetValue = Union[int, float, str]
+"""A value for a single subset region in a Venn diagram."""
 
 
 def venn4(
