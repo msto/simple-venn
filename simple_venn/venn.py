@@ -19,8 +19,8 @@ SubsetValue = Union[int, float, str]
 
 def venn4(
     subsets: Sequence[SubsetValue],
-    set_labels: tuple[str, ...] = ("A", "B", "C", "D"),
-    set_colors: tuple[str, ...] = ("#8eab12", "#feb308", "#8f1402", "#0485d1"),
+    set_labels: tuple[str, str, str, str] = ("A", "B", "C", "D"),
+    set_colors: tuple[str, str, str, str] = ("#8eab12", "#feb308", "#8f1402", "#0485d1"),
     alpha: float = 0.4,
     ax: Axes | None = None,
     set_label_fontsize: int = 18,
@@ -124,8 +124,8 @@ def venn4(
 
 def venn3(
     subsets: Sequence[SubsetValue],
-    set_labels: tuple[str, ...] = ("A", "B", "C"),
-    set_colors: tuple[str, ...] = ("#feb308", "#8f1402", "#0485d1"),
+    set_labels: tuple[str, str, str] = ("A", "B", "C"),
+    set_colors: tuple[str, str, str] = ("#feb308", "#8f1402", "#0485d1"),
     alpha: float = 0.4,
     ax: Axes | None = None,
     set_label_fontsize: int = 18,
@@ -216,8 +216,8 @@ def venn3(
 
 def venn2(
     subsets: Sequence[SubsetValue],
-    set_labels: tuple[str, ...] = ("A", "B"),
-    set_colors: tuple[str, ...] = ("#0485d1", "#8f1402"),
+    set_labels: tuple[str, str] = ("A", "B"),
+    set_colors: tuple[str, str] = ("#0485d1", "#8f1402"),
     alpha: float = 0.4,
     ax: Axes | None = None,
     set_label_fontsize: int = 18,
