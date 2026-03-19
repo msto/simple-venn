@@ -7,19 +7,25 @@
 
 """Simple Venn diagrams."""
 
+from collections.abc import Sequence
+from typing import Union
+
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
+from matplotlib.axes import Axes
+
+SubsetValue = Union[int, float, str]
 
 
 def venn4(
-    subsets,
-    set_labels=("A", "B", "C", "D"),
-    set_colors=("#8eab12", "#feb308", "#8f1402", "#0485d1"),
-    alpha=0.4,
-    ax=None,
-    set_label_fontsize=18,
-    subset_label_fontsize=14,
-):
+    subsets: Sequence[SubsetValue],
+    set_labels: tuple[str, ...] = ("A", "B", "C", "D"),
+    set_colors: tuple[str, ...] = ("#8eab12", "#feb308", "#8f1402", "#0485d1"),
+    alpha: float = 0.4,
+    ax: Axes | None = None,
+    set_label_fontsize: int = 18,
+    subset_label_fontsize: int = 14,
+) -> Axes:
     """
     Plot a four-way venn diagram.
 
@@ -83,7 +89,7 @@ def venn4(
         )
 
     # Add subset count labels
-    subsets = [str(s) for s in subsets]
+    subset_labels = [str(s) for s in subsets]
     subset_positions = [
         (0.30, 0.83, 45),  # A
         (0.70, 0.83, -45),  # B
@@ -101,7 +107,7 @@ def venn4(
         (0.40, 0.32, -10),  # BCD
         (0.50, 0.45, 0),  # ABCD
     ]
-    for label, (x, y, rotation) in zip(subsets, subset_positions, strict=True):
+    for label, (x, y, rotation) in zip(subset_labels, subset_positions, strict=True):
         ax.text(
             x, y, label, rotation=rotation, ha="center", va="center", fontsize=subset_label_fontsize
         )
@@ -117,14 +123,14 @@ def venn4(
 
 
 def venn3(
-    subsets,
-    set_labels=("A", "B", "C"),
-    set_colors=("#feb308", "#8f1402", "#0485d1"),
-    alpha=0.4,
-    ax=None,
-    set_label_fontsize=18,
-    subset_label_fontsize=14,
-):
+    subsets: Sequence[SubsetValue],
+    set_labels: tuple[str, ...] = ("A", "B", "C"),
+    set_colors: tuple[str, ...] = ("#feb308", "#8f1402", "#0485d1"),
+    alpha: float = 0.4,
+    ax: Axes | None = None,
+    set_label_fontsize: int = 18,
+    subset_label_fontsize: int = 14,
+) -> Axes:
     """
     Plot a three-way venn diagram.
 
@@ -186,7 +192,7 @@ def venn3(
         )
 
     # Add subset count labels
-    subsets = [str(s) for s in subsets]
+    subset_labels = [str(s) for s in subsets]
     subset_positions = [
         (0.5, 0.77),  # A
         (0.77, 0.3),  # B
@@ -196,7 +202,7 @@ def venn3(
         (0.5, 0.24),  # BC
         (0.5, 0.47),  # ABC
     ]
-    for label, (x, y) in zip(subsets, subset_positions, strict=True):
+    for label, (x, y) in zip(subset_labels, subset_positions, strict=True):
         ax.text(x, y, label, rotation=0, ha="center", va="center", fontsize=subset_label_fontsize)
 
     # Remove borders
@@ -209,14 +215,14 @@ def venn3(
 
 
 def venn2(
-    subsets,
-    set_labels=("A", "B"),
-    set_colors=("#0485d1", "#8f1402"),
-    alpha=0.4,
-    ax=None,
-    set_label_fontsize=18,
-    subset_label_fontsize=14,
-):
+    subsets: Sequence[SubsetValue],
+    set_labels: tuple[str, ...] = ("A", "B"),
+    set_colors: tuple[str, ...] = ("#0485d1", "#8f1402"),
+    alpha: float = 0.4,
+    ax: Axes | None = None,
+    set_label_fontsize: int = 18,
+    subset_label_fontsize: int = 14,
+) -> Axes:
     """
     Plot a two-way venn diagram.
 
@@ -277,13 +283,13 @@ def venn2(
         )
 
     # Add subset count labels
-    subsets = [str(s) for s in subsets]
+    subset_labels = [str(s) for s in subsets]
     subset_positions = [
         (0.2, 0.5),  # A
         (0.8, 0.5),  # B
         (0.5, 0.5),  # AB
     ]
-    for label, (x, y) in zip(subsets, subset_positions, strict=True):
+    for label, (x, y) in zip(subset_labels, subset_positions, strict=True):
         ax.text(x, y, label, rotation=0, ha="center", va="center", fontsize=subset_label_fontsize)
 
     # Remove borders
