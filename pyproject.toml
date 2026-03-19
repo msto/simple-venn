@@ -1,0 +1,159 @@
+[build-system]
+requires      = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name            = "simple-venn"
+version         = "0.2.0-dev"
+description     = "Simple Venn diagrams"
+readme          = "README.md"
+authors         = [{ name = "Matthew Stone" }]
+license         = "MIT"
+include         = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies    = [
+    "matplotlib",
+]
+classifiers     = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+keywords        = ["venn", "diagram", "matplotlib"]
+
+[project.urls]
+"homepage"    = "https://github.com/msto/simple-venn"
+"repository"  = "https://github.com/msto/simple-venn"
+"Bug Tracker" = "https://github.com/msto/simple-venn/issues"
+
+[dependency-groups]
+dev = [
+    "ruff ==0.15.6",
+    "mypy ==1.19.1",
+    "pytest ~=8.4",
+    "pytest-cov ~=6.2",
+    "poethepoet ~=0.36",
+]
+
+[tool.poe.tasks]
+fix-format = "ruff format"
+fix-lint   = "ruff check --fix"
+
+fix-all.sequence = [
+    "fix-format",
+    "fix-lint",
+]
+
+check-lock   = "uv lock --check"
+check-format = "ruff format --check --diff"
+check-lint   = "ruff check"
+check-tests  = "pytest"
+check-typing = "mypy"
+
+check-all.sequence = [
+    "check-lock",
+    "check-format",
+    "check-lint",
+    "check-typing",
+    "check-tests",
+]
+
+fix-and-check-all.sequence = [
+    "check-lock",
+    "fix-format",
+    "fix-lint",
+    "check-typing",
+    "check-tests",
+]
+
+[tool.mypy]
+files                       = ["./"]
+strict_optional             = true
+strict_equality             = true
+check_untyped_defs          = true
+disallow_any_generics       = true
+disallow_untyped_calls      = true
+disallow_untyped_decorators = true
+disallow_untyped_defs       = true
+no_implicit_optional        = true
+warn_no_return              = true
+warn_redundant_casts        = true
+warn_return_any             = true
+warn_unreachable            = true
+warn_unused_configs         = true
+warn_unused_ignores         = true
+enable_error_code           = [
+    "ignore-without-code",
+    "possibly-undefined",
+    "exhaustive-match",
+]
+exclude                     = [
+    "docs/",
+    "site/",
+]
+
+[[tool.mypy.overrides]]
+module                 = "matplotlib.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+addopts    = [
+    "--color=yes",
+    "--import-mode=importlib",
+    "--cov",
+]
+
+[tool.ruff]
+line-length    = 100
+target-version = "py312"
+output-format  = "full"
+preview        = true
+
+[tool.ruff.lint]
+select    = [
+    "A",      # Builtin shadowing
+    "ARG",    # Unused arguments
+    "C901",   # McCabe complexity
+    "B",      # bugbear
+    "D",      # pydocstyle (docstrings. We have the "google" convention enabled)
+    "D204",   # Blank line between class docstring and first (__init__) method
+    "D213",   # Summary line should be located on the line after opening quotes
+    "E",      # pycodestyle errors
+    "LOG",    # flake8-logging
+    "LOG015", # (preview rule) Prohibit calls to the root logger
+    "F",      # pyflakes
+    "I",      # isort
+    "N",      # PEP8 naming
+    "W",      # pycodestyle warnings
+    "Q",      # flake8-quotes
+    "RUF008", # Do not use mutable default values for dataclass attributes
+    "RUF012", # Mutable class attributes should be annotated with typing.ClassVar
+    "RUF024", # Do not pass mutable objects as values to dict.fromKeys
+]
+ignore    = [
+    "E203",
+    "E701",
+    "D212",  # summary line should be located on the same line as opening quotes
+    "D100",  # missing docstring in public module
+    "D104",  # missing docstring in public package
+]
+unfixable = ["B"]
+# NB: only preview rules explicitly selected above (e.g. LOG015) will be enforced
+preview              = true
+explicit-preview-rules = true
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**.py" = ["D103"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
