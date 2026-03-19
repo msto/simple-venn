@@ -67,7 +67,7 @@ def venn4(
         ((0.35, 0.40), -45),  # D (bottom left)
     ]
     for (coord, angle), color in zip(ellipse_coords, set_colors, strict=True):
-        e = patches.Ellipse(coord, width, height, angle, alpha=alpha, facecolor=color)
+        e = patches.Ellipse(coord, width, height, angle=angle, alpha=alpha, facecolor=color)
         ax.add_patch(e)
 
     # Add exterior set labels
