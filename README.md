@@ -18,8 +18,9 @@ Available on [PyPi](https://pypi.python.org/pypi/simple-venn/0.1.0)
     pip install simple-venn
 
 ## Example
-![demo](https://github.com/msto/simple-venn/blob/master/demo/demo.png)
+![demo](https://raw.githubusercontent.com/msto/simple-venn/main/demo/demo.png)
 
-The code used to generate this figure can be found in the included [iPython
-notebook demo](demo/simple-venn-demo.ipynb).
+To regenerate this figure:
+
+    uv run poe generate-demo
 

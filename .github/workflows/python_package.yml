@@ -29,3 +29,7 @@ jobs:
       - name: Test the library
         run: |
           uv run poe check-all
+      - name: Check demo generation succeeds
+        if: matrix.PYTHON_VERSION == '3.12'
+        run: |
+          uv run poe generate-demo
