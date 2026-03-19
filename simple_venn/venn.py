@@ -14,13 +14,11 @@ import matplotlib.pyplot as plt
 def venn4(
     subsets,
     set_labels=("A", "B", "C", "D"),
-    #  set_colors=['#8f1402', '#0485d1', '#feb308', '#8eab12'],
-    set_colors=["#8eab12", "#feb308", "#8f1402", "#0485d1"],
+    set_colors=("#8eab12", "#feb308", "#8f1402", "#0485d1"),
     alpha=0.4,
     ax=None,
     set_label_fontsize=18,
     subset_label_fontsize=14,
-    rotate_labels=True,
 ):
     """
     Plot a four-way venn diagram.
@@ -46,9 +44,6 @@ def venn4(
     subset_label_fontsize : int, optional
         Fontsize of interior count labels
         Default=14pt, optimized for 8in by 8in figure
-    rotate_labels : bool, optional
-        When true, rotate count labels to fit larger numbers.
-        When false, count labels are horizontal with rotation=0.
 
     Returns:
     -------
@@ -124,7 +119,7 @@ def venn4(
 def venn3(
     subsets,
     set_labels=("A", "B", "C"),
-    set_colors=["#feb308", "#8f1402", "#0485d1"],
+    set_colors=("#feb308", "#8f1402", "#0485d1"),
     alpha=0.4,
     ax=None,
     set_label_fontsize=18,
@@ -216,7 +211,7 @@ def venn3(
 def venn2(
     subsets,
     set_labels=("A", "B"),
-    set_colors=["#0485d1", "#8f1402"],
+    set_colors=("#0485d1", "#8f1402"),
     alpha=0.4,
     ax=None,
     set_label_fontsize=18,
