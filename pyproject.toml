@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name            = "simple-venn"
-version         = "0.1.0"
+version         = "0.2.0-dev"
 description     = "Simple venn diagrams"
 readme          = "README.md"
 authors         = [{ name = "Matthew Stone", email = "matthew.stone12@gmail.com" }]
@@ -34,8 +34,8 @@ keywords        = ["venn", "diagram", "matplotlib"]
 
 [dependency-groups]
 dev = [
-    "ruff ==0.14.4",
-    "mypy ==1.18.2",
+    "ruff ==0.15.6",
+    "mypy ==1.19.1",
     "pytest ~=8.4",
     "pytest-cov ~=6.2",
     "poethepoet ~=0.36",
