@@ -50,6 +50,8 @@ fix-all.sequence = [
     "fix-lint",
 ]
 
+generate-demo = "python demo/generate_demo.py"
+
 check-lock   = "uv lock --check"
 check-format = "ruff format --check --diff"
 check-lint   = "ruff check"
@@ -94,6 +96,7 @@ enable_error_code           = [
     "exhaustive-match",
 ]
 exclude                     = [
+    "demo/",
     "docs/",
     "site/",
 ]
@@ -150,6 +153,7 @@ preview              = true
 explicit-preview-rules = true
 
 [tool.ruff.lint.per-file-ignores]
+"demo/**.py"  = ["D103"]
 "tests/**.py" = ["D103"]
 
 [tool.ruff.lint.isort]
