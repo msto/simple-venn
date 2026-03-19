@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  UV_VERSION: 0.9.26
+  UV_VERSION: 0.10.11
   PYTHON_VERSION: 3.12
 
 jobs:
@@ -25,12 +25,12 @@ jobs:
     needs: [tests]
     steps:
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           fetch-depth: 0
 
       - name: Set up uv and Python
-        uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b  # v7.2.0
+        uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78  # v7.6.0
         with:
           version: "${{ env.UV_VERSION }}"
           python-version: ${{ env.PYTHON_VERSION }}
@@ -130,7 +130,7 @@ jobs:
       release_body: "${{ steps.git-cliff.outputs.content }}"
     steps:
       - name: Checkout the Repository at the Tagged Commit
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
         with:
           fetch-depth: 0
           ref: "${{ github.ref_name }}"
