@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name            = "simple-venn"
-version         = "0.2.0-dev"
+version         = "0.2.0"
 description     = "Simple Venn diagrams"
 readme          = "README.md"
 authors         = [{ name = "Matthew Stone" }]
