@@ -5,12 +5,10 @@
 #
 # Distributed under terms of the MIT license.
 
-"""
-Simple venn diagrams.
-"""
+"""Simple Venn diagrams."""
 
-import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import matplotlib.pyplot as plt
 
 
 def venn4(
@@ -52,11 +50,10 @@ def venn4(
         When true, rotate count labels to fit larger numbers.
         When false, count labels are horizontal with rotation=0.
 
-    Returns
+    Returns:
     -------
     ax : AxesSubplot
     """
-
     if len(subsets) != 15:
         raise Exception("Must provide exactly 15 subset values")
 
@@ -158,11 +155,10 @@ def venn3(
         Fontsize of interior count labels
         Default=14pt, optimized for 8in by 8in figure
 
-    Returns
+    Returns:
     -------
     ax : AxesSubplot
     """
-
     if len(subsets) != 7:
         raise Exception("Must provide exactly 7 subset values")
 
@@ -251,11 +247,10 @@ def venn2(
         Fontsize of interior count labels
         Default=14pt, optimized for 8in by 8in figure
 
-    Returns
+    Returns:
     -------
     ax : AxesSubplot
     """
-
     if len(subsets) != 3:
         raise Exception("Must provide exactly 3 subset values")
 
